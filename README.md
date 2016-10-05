@@ -23,5 +23,8 @@ console.log(allowSetForegroundWindow()) // all processes will be enabled to set 
  * `node-gyp build`
  * `npm test`
 
+## Resources
+[The Old New Thing: Foreground activation permission is like love: You can’t steal it, it has to be given to you](https://blogs.msdn.microsoft.com/oldnewthing/20090220-00/?p=19083)
+
 ## License
 [MIT](LICENSE)
