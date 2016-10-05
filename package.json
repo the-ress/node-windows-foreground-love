@@ -1,0 +1,22 @@
+{
+  "name": "windows-foreground-love",
+  "version": "0.1.0",
+  "description": "API wrapper for AllowSetForegroundWindow",
+  "main": "index.js",
+  "os": [
+    "win32"
+  ],
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-ress/node-windows-foreground-love.git"
+  },
+  "author": "Tereza Tomcova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-ress/node-windows-foreground-love/issues"
+  },
+  "homepage": "https://github.com/the-ress/node-windows-foreground-love#readme"
+}
