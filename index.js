@@ -15,7 +15,7 @@ exports.allowSetForegroundWindow = function (pid) {
     return false;
   }
 
-  var r = 0;
+  var r = false;
   try {
     r = foregroundLove.allowSetForegroundWindow(pid);
   } catch (err) {

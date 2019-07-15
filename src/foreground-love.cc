@@ -10,8 +10,21 @@ napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
 
   napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
 
-  int pid;
-  napi_get_value_int32(env, argv[0], &pid);
+  int pid = 0;
+
+  if (argc != 0) {
+    napi_valuetype valuetype0;
+    napi_typeof(env, argv[0], &valuetype0);
+
+    if (valuetype0 != napi_undefined) {
+      napi_status status = napi_get_value_int32(env, argv[0], &pid);
+
+      if (status != napi_ok) {
+        napi_throw_type_error(env, NULL, "Invalid number was passed as argument.");
+        return NULL;
+      }
+    }
+  }
 
   BOOL result;
   if (pid != 0) {
