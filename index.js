@@ -5,7 +5,7 @@ exports.allowSetForegroundWindow = function (pid) {
   if (!tried) {
     tried = true;
     try {
-      foregroundLove = require('./build/Release/foregroundlove');
+      foregroundLove = require('./build/Release/foreground_love');
     } catch (err) {
       console.error(err);
     }
