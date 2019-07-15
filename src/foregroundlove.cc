@@ -6,9 +6,9 @@ namespace foreground_love {
 
 napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
   napi_value argv[1];
-	size_t argc = 1;
+  size_t argc = 1;
 
-	napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
+  napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
 
   int pid;
   napi_get_value_int32(env, argv[0], &pid);
@@ -22,9 +22,9 @@ napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
   }
 
   napi_value napi_result;
-	napi_get_boolean(env, result, &napi_result);
+  napi_get_boolean(env, result, &napi_result);
 
-	return napi_result;
+  return napi_result;
 }
 
 napi_value Init(napi_env env, napi_value exports) {
