@@ -1,9 +1,9 @@
 {
   "targets": [
     {
-      "target_name": "foreground-love",
+      "target_name": "foregroundlove",
       "sources": [
-        "src/foreground-love.cc"
+        "src/foregroundlove.cc"
       ]
     }
   ]

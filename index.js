@@ -1,12 +1,12 @@
 var foregroundLove = null;
 var tried = false;
 
-exports.allowSetForegroundWindow = function(pid) {
+exports.allowSetForegroundWindow = function (pid) {
   if (!tried) {
     tried = true;
     try {
-      foregroundLove = require('./build/Release/foreground-love');
-    } catch(err) {
+      foregroundLove = require('./build/Release/foregroundlove');
+    } catch (err) {
       console.error(err);
     }
   }
@@ -18,7 +18,7 @@ exports.allowSetForegroundWindow = function(pid) {
   var r = 0;
   try {
     r = foregroundLove.allowSetForegroundWindow(pid);
-  } catch(err) {
+  } catch (err) {
     console.error(err);
   }
   return r;
