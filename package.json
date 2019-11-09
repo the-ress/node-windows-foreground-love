@@ -4,6 +4,12 @@
   "description": "API wrapper for AllowSetForegroundWindow",
   "main": "index.js",
   "types": "index.d.ts",
+  "files": [
+    "src",
+    "binding.gyp",
+    "index.js",
+    "index.d.ts"
+  ],
   "os": [
     "win32"
   ],
