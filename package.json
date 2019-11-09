@@ -1,6 +1,6 @@
 {
   "name": "windows-foreground-love",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "API wrapper for AllowSetForegroundWindow",
   "main": "index.js",
   "types": "index.d.ts",
