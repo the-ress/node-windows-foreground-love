@@ -1,10 +1,14 @@
 #include <node_api.h>
-#include <windows.h>
 #include <iostream>
+
+#if _WIN32
+#include <windows.h>
+#endif
 
 namespace foreground_love {
 
 napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
+#if _WIN32
   napi_value argv[1];
   size_t argc = 1;
 
@@ -36,6 +40,10 @@ napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
 
   napi_value napi_result;
   napi_get_boolean(env, result, &napi_result);
+#else
+  napi_value napi_result;
+  napi_get_undefined(env, &napi_result);
+#endif
 
   return napi_result;
 }
