@@ -10,9 +10,6 @@
     "index.js",
     "index.d.ts"
   ],
-  "os": [
-    "win32"
-  ],
   "scripts": {
     "test": "node test/test.js"
   },

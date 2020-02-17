@@ -2,6 +2,10 @@ var foregroundLove = null;
 var tried = false;
 
 exports.allowSetForegroundWindow = function (pid) {
+  if (process.platform !== 'win32') {
+    return false;
+  }
+
   if (!tried) {
     tried = true;
     try {

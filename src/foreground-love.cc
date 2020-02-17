@@ -1,5 +1,4 @@
 #include <node_api.h>
-#include <iostream>
 
 #if _WIN32
 #include <windows.h>
