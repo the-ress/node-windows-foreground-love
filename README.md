@@ -16,7 +16,7 @@ console.log(allowSetForegroundWindow()) // all processes will be enabled to set 
 
 ## Supported platforms
  * Windows
- * Other platforms: installs but doesn't do anything and always returns false
+ * Other platforms: installs, but doesn't do anything and always returns false
 
 ## Developing
  * `npm install -g node-gyp`
