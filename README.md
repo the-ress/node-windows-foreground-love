@@ -14,8 +14,9 @@ console.log(allowSetForegroundWindow(pid))
 console.log(allowSetForegroundWindow()) // all processes will be enabled to set the foreground window
 ```
 
-## Supported OSes
- * windows
+## Supported platforms
+ * Windows
+ * Other platforms: installs but doesn't do anything and always returns false
 
 ## Developing
  * `npm install -g node-gyp`
