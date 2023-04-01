@@ -20,8 +20,7 @@ console.log(allowSetForegroundWindow()) // all processes will be enabled to set 
 
 ## Developing
  * `npm install -g node-gyp`
- * `node-gyp configure`
- * `node-gyp build`
+ * `npm install`
  * `npm test`
 
 ## Resources
