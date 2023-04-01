@@ -1,5 +1,7 @@
 # API wrapper for [AllowSetForegroundWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632668.aspx)
 
+[![CI status](https://github.com/the-ress/node-windows-foreground-love/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/the-ress/node-windows-foreground-love/actions/workflows/ci.yml?query=branch%3Amaster)
+
 ## Installing
 
 ```sh
