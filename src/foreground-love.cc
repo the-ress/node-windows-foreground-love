@@ -4,6 +4,8 @@
 #include <windows.h>
 #endif
 
+#include "common.h"
+
 namespace foreground_love {
 
 napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
@@ -11,19 +13,19 @@ napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
   napi_value argv[1];
   size_t argc = 1;
 
-  napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
+  NAPI_CALL(env, napi_get_cb_info(env, info, &argc, argv, NULL, NULL));
 
   int pid = 0;
 
   if (argc != 0) {
     napi_valuetype valuetype0;
-    napi_typeof(env, argv[0], &valuetype0);
+    NAPI_CALL(env, napi_typeof(env, argv[0], &valuetype0));
 
     if (valuetype0 != napi_undefined) {
       napi_status status = napi_get_value_int32(env, argv[0], &pid);
 
       if (status != napi_ok) {
-        napi_throw_type_error(env, NULL, "Invalid number was passed as argument.");
+        NAPI_CALL(env, napi_throw_type_error(env, NULL, "Invalid number was passed as argument."));
         return NULL;
       }
     }
@@ -38,10 +40,10 @@ napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
   }
 
   napi_value napi_result;
-  napi_get_boolean(env, result, &napi_result);
+  NAPI_CALL(env, napi_get_boolean(env, result, &napi_result));
 #else
   napi_value napi_result;
-  napi_get_undefined(env, &napi_result);
+  NAPI_CALL(env, napi_get_undefined(env, &napi_result));
 #endif
 
   return napi_result;
@@ -49,8 +51,8 @@ napi_value AllowSetForegroundWindow(napi_env env, napi_callback_info info) {
 
 napi_value Init(napi_env env, napi_value exports) {
   napi_value allowSetForegroundWindow;
-  napi_create_function(env, "allowSetForegroundWindow", NAPI_AUTO_LENGTH, AllowSetForegroundWindow, NULL, &allowSetForegroundWindow);
-  napi_set_named_property(env, exports, "allowSetForegroundWindow", allowSetForegroundWindow);
+  NAPI_CALL(env, napi_create_function(env, "allowSetForegroundWindow", NAPI_AUTO_LENGTH, AllowSetForegroundWindow, NULL, &allowSetForegroundWindow));
+  NAPI_CALL(env, napi_set_named_property(env, exports, "allowSetForegroundWindow", allowSetForegroundWindow));
 
   return exports;
 }
